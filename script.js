@@ -406,7 +406,7 @@ let currentClientData = null;
 // Abrir modal de check-in
 function abrirCheckIn() {
     const modal = document.getElementById('qrcodeModal');
-    const nome = prompt('Digite o nome do cliente para gerar o QR Code:');
+    const nome = prompt('Digite o nome do cliente:');
     
     if (!nome || nome.trim() === '') {
         return;
@@ -415,13 +415,35 @@ function abrirCheckIn() {
     // Buscar dados do cliente ou criar novo
     const clienteId = gerarIdCliente(nome);
     const dadosCliente = buscarOuCriarCliente(nome, clienteId);
+    
+    // Se cliente novo, pedir aniversário
+    if (!dadosCliente.aniversario) {
+        const aniversario = prompt('Data de aniversário (DD/MM):');
+        if (aniversario && aniversario.trim() !== '') {
+            dadosCliente.aniversario = aniversario.trim();
+            // Salvar
+            const clientes = JSON.parse(localStorage.getItem('barbear14_clientes') || '{}');
+            clientes[clienteId] = dadosCliente;
+            localStorage.setItem('barbear14_clientes', JSON.stringify(clientes));
+        }
+    }
+    
     currentClientData = dadosCliente;
+    
+    // Verificar se é semana de aniversário
+    const isAniversarioWeek = verificarSemanaAniversario(dadosCliente.aniversario);
     
     // Atualizar informações no modal
     document.getElementById('clientName').textContent = dadosCliente.nome;
+    document.getElementById('clientBirthday').textContent = dadosCliente.aniversario || 'Não cadastrado';
     document.getElementById('lastVisit').textContent = dadosCliente.ultimaVisita || 'Primeira visita';
     document.getElementById('totalVisits').textContent = dadosCliente.totalVisitas;
     document.getElementById('clientPoints').textContent = dadosCliente.pontos;
+    
+    // Mostrar alerta de aniversário
+    if (isAniversarioWeek) {
+        alert('🎉 SEMANA DE ANIVERSÁRIO! 🎉\n\nEste cliente ganha 20% de desconto em qualquer serviço!');
+    }
     
     // Gerar QR Code
     gerarQRCode(clienteId);
@@ -451,6 +473,7 @@ function buscarOuCriarCliente(nome, clienteId) {
         id: clienteId,
         nome: nome,
         telefone: '',
+        aniversario: '',
         dataCadastro: new Date().toISOString(),
         ultimaVisita: null,
         totalVisitas: 0,
@@ -462,6 +485,24 @@ function buscarOuCriarCliente(nome, clienteId) {
     localStorage.setItem('barbear14_clientes', JSON.stringify(clientes));
     
     return novoCliente;
+}
+
+// Verificar se é semana de aniversário
+function verificarSemanaAniversario(aniversarioStr) {
+    if (!aniversarioStr) return false;
+    
+    const hoje = new Date();
+    const diaHoje = hoje.getDate();
+    const mesHoje = hoje.getMonth() + 1;
+    
+    // Parse DD/MM
+    const [diaAniv, mesAniv] = aniversarioStr.split('/').map(n => parseInt(n));
+    
+    if (!diaAniv || !mesAniv || mesAniv !== mesHoje) return false;
+    
+    // Verifica se está dentro de 3 dias antes ou depois
+    const diff = Math.abs(diaHoje - diaAniv);
+    return diff <= 3;
 }
 
 // Gerar QR Code

@@ -506,11 +506,11 @@ function registrarVisita() {
     const agora = new Date();
     cliente.ultimaVisita = agora.toLocaleDateString('pt-BR');
     cliente.totalVisitas += 1;
-    cliente.pontos += 3; // 3 pontos por visita (média de R$30)
+    cliente.pontos += 1; // 1 ponto por visita
     cliente.historico.push({
         data: agora.toISOString(),
         tipo: 'visita',
-        pontos: 3
+        pontos: 1
     });
     
     // Salvar

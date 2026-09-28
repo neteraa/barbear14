@@ -14,17 +14,20 @@ Um programa de **fidelização digital** que recompensa seus clientes mais fiéi
 3. **A cada visita**, ganha pontos automaticamente
 4. **Acumula pontos** e troca por serviços grátis
 
-### Regra Simples:
+### Regra SUPER Simples:
 ```
-💰 A cada R$ 10,00 gastos = 1 ponto acumulado
+✂️ 1 VISITA = 1 PONTO
 ```
 
+**Não importa o serviço! Cada vez que visita, ganha 1 ponto!**
+
 **Exemplos:**
-- Corte (R$ 30) = **3 pontos**
-- Barba (R$ 30) = **3 pontos**
-- Corte + Barba (R$ 55) = **5,5 pontos** (arredonda pra 6!)
-- Pezinho (R$ 20) = **2 pontos**
-- Sobrancelha (R$ 10) = **1 ponto**
+- Veio cortar? = **1 ponto**
+- Veio fazer barba? = **1 ponto**  
+- Veio fazer corte + barba? = **1 ponto**
+- Qualquer serviço = **1 ponto**
+
+**SIMPLES ASSIM!** 🎯
 
 ---
 
@@ -39,14 +42,16 @@ Um programa de **fidelização digital** que recompensa seus clientes mais fiéi
 
 ### 📊 Exemplo Prático:
 
-**Cliente faz 4 cortes:**
-- Corte 1: R$ 30 = 3 pontos → **Total: 3 pontos**
-- Corte 2: R$ 30 = 3 pontos → **Total: 6 pontos**
-- Corte 3: R$ 30 = 3 pontos → **Total: 9 pontos**
-- Corte 4: R$ 30 = 3 pontos → **Total: 12 pontos**
+**Cliente visita 10 vezes:**
+- Visita 1 = 1 ponto → **Total: 1 ponto**
+- Visita 2 = 1 ponto → **Total: 2 pontos**
+- Visita 3 = 1 ponto → **Total: 3 pontos**
+- ...
+- Visita 10 = 1 ponto → **Total: 10 pontos**
 
-💥 **Com 10 pontos = GANHA 1 CORTE GRÁTIS!**
-Ainda sobram 2 pontos para a próxima!
+💥 **10 PONTOS = 11º SERVIÇO GRÁTIS!**
+
+**Tradução:** Vem 10 vezes, a 11ª é de graça! 🎉
 
 ---
 

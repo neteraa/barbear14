@@ -9,6 +9,7 @@
     --gray-light: #e5ecf1;
     --shadow: rgba(0, 0, 0, 0.3);
     --gradient: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+    --grain: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
 }
 
 * {
@@ -95,6 +96,21 @@ body {
 
 .nav-menu a:hover::after {
     width: 100%;
+}
+
+.admin-link {
+    background: rgba(232, 212, 181, 0.15) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    border: 1px solid rgba(232, 212, 181, 0.3);
+    transition: all 0.3s;
+}
+
+.admin-link:hover {
+    background: var(--primary) !important;
+    color: var(--dark) !important;
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .menu-toggle {

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BARBEAR14 Admin</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>💈 BARBEAR14</h1>
+                <p>Gestão Inteligente</p>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" onclick="showSection('overview')">
+                    <span class="icon">📊</span>
+                    <span>Visão Geral</span>
+                </a>
+                <a href="#clientes" class="nav-item" onclick="showSection('clientes')">
+                    <span class="icon">👥</span>
+                    <span>Clientes</span>
+                </a>
+                <a href="#checkins" class="nav-item" onclick="showSection('checkins')">
+                    <span class="icon">✂️</span>
+                    <span>Check-ins</span>
+                </a>
+                <a href="#fidelidade" class="nav-item" onclick="showSection('fidelidade')">
+                    <span class="icon">🎁</span>
+                    <span>Fidelidade</span>
+                </a>
+                <a href="#relatorios" class="nav-item" onclick="showSection('relatorios')">
+                    <span class="icon">📈</span>
+                    <span>Relatórios</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-logout" onclick="window.location.href='index.html'">
+                    ← Voltar ao Site
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h2 id="page-title">Visão Geral</h2>
+                    <p id="page-subtitle">Dashboard de gestão da barbearia</p>
+                </div>
+                <div class="header-right">
+                    <button class="btn-primary" onclick="abrirCheckInAdmin()">
+                        + Novo Check-in
+                    </button>
+                </div>
+            </header>
+
+            <!-- Overview Section -->
+            <section id="overview-section" class="content-section active">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-info">
+                            <h3 id="totalClientes">0</h3>
+                            <p>Clientes Cadastrados</p>
+                        </div>
+                        <div class="stat-trend positive">+12% este mês</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✂️</div>
+                        <div class="stat-info">
+                            <h3 id="totalVisitas">0</h3>
+                            <p>Visitas Realizadas</p>
+                        </div>
+                        <div class="stat-trend positive">+8% este mês</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-info">
+                            <h3 id="faturamento">R$ 0</h3>
+                            <p>Faturamento Estimado</p>
+                        </div>
+                        <div class="stat-trend positive">+15% este mês</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎁</div>
+                        <div class="stat-info">
+                            <h3 id="pontosDistribuidos">0</h3>
+                            <p>Pontos Distribuídos</p>
+                        </div>
+                        <div class="stat-trend">Fidelidade ativa</div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <h3>📈 Atendimentos por Dia</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="attendanceChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>🏆 Top 5 Clientes Fiéis</h3>
+                        <div id="topClientes" class="ranking-list">
+                            <!-- Preenchido via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-card">
+                    <h3>🕐 Atividades Recentes</h3>
+                    <div id="recentActivity" class="activity-list">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clientes Section -->
+            <section id="clientes-section" class="content-section">
+                <div class="table-card">
+                    <div class="table-header">
+                        <input type="text" id="searchClientes" placeholder="🔍 Buscar cliente..." class="search-input">
+                        <button class="btn-secondary" onclick="exportarClientes()">📥 Exportar</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="clientesTable">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Cadastro</th>
+                                    <th>Última Visita</th>
+                                    <th>Visitas</th>
+                                    <th>Pontos</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientesTableBody">
+                                <!-- Preenchido via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Check-ins Section -->
+            <section id="checkins-section" class="content-section">
+                <div class="checkins-grid">
+                    <div class="checkin-card">
+                        <h3>✅ Check-in Hoje</h3>
+                        <div class="big-number" id="checkinsHoje">0</div>
+                        <p>atendimentos realizados</p>
+                    </div>
+                    <div class="checkin-card">
+                        <h3>📅 Esta Semana</h3>
+                        <div class="big-number" id="checkinsSemana">0</div>
+                        <p>atendimentos na semana</p>
+                    </div>
+                    <div class="checkin-card">
+                        <h3>📆 Este Mês</h3>
+                        <div class="big-number" id="checkinsMes">0</div>
+                        <p>atendimentos no mês</p>
+                    </div>
+                </div>
+
+                <div class="table-card" style="margin-top: 2rem;">
+                    <h3>Histórico de Check-ins</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data/Hora</th>
+                                    <th>Cliente</th>
+                                    <th>Serviço</th>
+                                    <th>Pontos</th>
+                                </tr>
+                            </thead>
+                            <tbody id="checkinsHistorico">
+                                <!-- Preenchido via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fidelidade Section -->
+            <section id="fidelidade-section" class="content-section">
+                <div class="fidelidade-stats">
+                    <div class="fidelidade-card">
+                        <h3>🎁 Prêmios Resgatados</h3>
+                        <div class="big-number" id="premiosResgatados">0</div>
+                    </div>
+                    <div class="fidelidade-card">
+                        <h3>💳 Taxa de Adesão</h3>
+                        <div class="big-number" id="taxaAdesao">100%</div>
+                    </div>
+                    <div class="fidelidade-card">
+                        <h3>⭐ Pontos Médios</h3>
+                        <div class="big-number" id="pontosMedias">0</div>
+                    </div>
+                </div>
+
+                <div class="table-card" style="margin-top: 2rem;">
+                    <h3>Clientes Próximos de Resgatar</h3>
+                    <div id="clientesProximosResgate" class="proximity-list">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Relatórios Section -->
+            <section id="relatorios-section" class="content-section">
+                <div class="relatorios-header">
+                    <h3>📊 Relatórios Disponíveis</h3>
+                    <div class="date-range">
+                        <input type="date" id="dataInicio" class="date-input">
+                        <span>até</span>
+                        <input type="date" id="dataFim" class="date-input">
+                        <button class="btn-primary" onclick="gerarRelatorio()">Gerar</button>
+                    </div>
+                </div>
+
+                <div class="relatorios-grid">
+                    <div class="relatorio-card">
+                        <h4>📈 Crescimento de Clientes</h4>
+                        <p>Análise de novos cadastros ao longo do tempo</p>
+                        <button class="btn-secondary">Visualizar</button>
+                    </div>
+                    <div class="relatorio-card">
+                        <h4>💰 Faturamento</h4>
+                        <p>Receita estimada por período</p>
+                        <button class="btn-secondary">Visualizar</button>
+                    </div>
+                    <div class="relatorio-card">
+                        <h4>🏆 Ranking de Serviços</h4>
+                        <p>Serviços mais realizados</p>
+                        <button class="btn-secondary">Visualizar</button>
+                    </div>
+                    <div class="relatorio-card">
+                        <h4>🎁 Efetividade do Programa</h4>
+                        <p>Análise do programa de fidelidade</p>
+                        <button class="btn-secondary">Visualizar</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

@@ -1,15 +1,18 @@
 :root {
-    --primary: #e8d4b5;
-    --secondary: #1e2942;
-    --dark: #141d2e;
-    --darker: #0c1219;
+    --primary: #ff4757;
+    --primary-dark: #d63447;
+    --secondary: #1a1a2e;
+    --dark: #16213e;
+    --darker: #0f0f0f;
     --light: #ffffff;
-    --bg-light: #c0d8e8;
-    --gray: #7a8a9e;
-    --gray-light: #e5ecf1;
-    --shadow: rgba(0, 0, 0, 0.3);
-    --gradient: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
-    --grain: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+    --bg-light: #f8f9fa;
+    --bg-dark: #2d3436;
+    --gray: #636e72;
+    --gray-light: #dfe6e9;
+    --accent: #ffa502;
+    --shadow: rgba(0, 0, 0, 0.15);
+    --gradient-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f0f 100%);
+    --gradient-red: linear-gradient(135deg, #ff4757 0%, #d63447 100%);
 }
 
 * {
@@ -167,59 +170,53 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: 
-        linear-gradient(135deg, 
-            rgba(192, 216, 232, 0.95) 0%, 
-            rgba(168, 197, 217, 0.95) 50%,
-            rgba(192, 216, 232, 0.95) 100%
-        );
+    background: var(--gradient-dark);
     overflow: hidden;
 }
 
 .hero::before {
     content: '';
     position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background: 
-        radial-gradient(circle, rgba(232, 212, 181, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(30, 41, 66, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 20% 20%, rgba(232, 212, 181, 0.1) 0%, transparent 50%);
-    animation: heroRotate 60s linear infinite;
+        radial-gradient(circle at 20% 30%, rgba(255, 71, 87, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 165, 2, 0.1) 0%, transparent 50%);
+    animation: pulse 15s ease-in-out infinite;
 }
 
-@keyframes heroRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
 .hero::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: 
+    background-image: 
         repeating-linear-gradient(
-            90deg,
+            0deg,
             transparent,
-            transparent 100px,
-            rgba(255, 255, 255, 0.03) 100px,
-            rgba(255, 255, 255, 0.03) 101px
+            transparent 2px,
+            rgba(255, 255, 255, 0.03) 2px,
+            rgba(255, 255, 255, 0.03) 4px
         );
+    opacity: 0.5;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.02) 100%);
-    backdrop-filter: blur(0.5px);
+    background: radial-gradient(circle at 50% 50%, transparent 30%, rgba(0,0,0,0.3) 100%);
 }
 
 .hero-content {
     position: relative;
     text-align: center;
-    color: var(--secondary);
+    color: var(--light);
     z-index: 2;
     padding: 2rem;
 }
@@ -235,6 +232,7 @@ body {
     font-weight: 600;
     letter-spacing: 4px;
     color: var(--primary);
+    text-transform: uppercase;
 }
 
 .hero-title-main {
@@ -243,8 +241,12 @@ body {
     font-family: 'Playfair Display', serif;
     letter-spacing: 8px;
     line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5),
-                 -1px -1px 2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--light) 0%, var(--gray-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 .hero-title-sub {
@@ -252,19 +254,20 @@ body {
     letter-spacing: 6px;
     font-weight: 300;
     margin-top: 0.5rem;
-    color: var(--dark);
+    color: var(--gray-light);
+    text-transform: uppercase;
 }
 
 .hero-mustache {
     margin: 2rem auto;
     max-width: 200px;
-    color: var(--secondary);
-    opacity: 0.95;
+    color: var(--primary);
+    opacity: 1;
     animation: float 3s ease-in-out infinite;
 }
 
 .hero-mustache svg {
-    filter: drop-shadow(0 4px 10px rgba(30, 41, 66, 0.4));
+    filter: drop-shadow(0 4px 15px rgba(255, 71, 87, 0.6));
 }
 
 @keyframes float {
@@ -277,7 +280,7 @@ body {
     margin: 1.5rem 0;
     font-weight: 300;
     letter-spacing: 1px;
-    color: var(--dark);
+    color: var(--light);
 }
 
 .hero-buttons {
@@ -297,7 +300,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    color: var(--secondary);
+    color: var(--gray-light);
     font-size: 0.85rem;
     letter-spacing: 2px;
     animation: bounce 2s infinite;
@@ -306,7 +309,7 @@ body {
 .scroll-arrow {
     width: 20px;
     height: 30px;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--primary);
     border-radius: 15px;
     position: relative;
 }
@@ -319,7 +322,7 @@ body {
     transform: translateX(-50%);
     width: 4px;
     height: 8px;
-    background: var(--secondary);
+    background: var(--primary);
     border-radius: 2px;
     animation: scroll 1.5s infinite;
 }
@@ -351,26 +354,33 @@ body {
 }
 
 .btn-primary {
-    background: var(--secondary);
+    background: var(--gradient-red);
     color: var(--light);
     border: 2px solid var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary:hover {
-    background: var(--dark);
+    background: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(30, 41, 66, 0.4);
+    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.5);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
+    color: var(--light);
+    border: 2px solid var(--light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-secondary:hover {
-    background: var(--secondary);
-    color: var(--light);
+    background: var(--light);
+    color: var(--secondary);
+    border-color: var(--light);
 }
 
 .btn-small {
@@ -442,7 +452,18 @@ section {
 
 /* Sobre */
 .sobre {
-    background: var(--bg-light);
+    background: var(--light);
+    position: relative;
+}
+
+.sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
 }
 
 .sobre-content {
@@ -509,16 +530,35 @@ section {
 
 /* Serviços */
 .servicos {
-    background: var(--gradient);
+    background: var(--gradient-dark);
+    position: relative;
+}
+
+.servicos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 71, 87, 0.02) 10px,
+            rgba(255, 71, 87, 0.02) 20px
+        );
 }
 
 .servicos .section-title,
 .servicos .section-subtitle {
     color: var(--light);
+    position: relative;
+    z-index: 1;
 }
 
 .servicos .section-divider {
     background: var(--primary);
+    position: relative;
+    z-index: 1;
 }
 
 .servicos-grid {
@@ -571,25 +611,32 @@ section {
 }
 
 .servico-card.featured {
-    background: var(--primary);
-    color: var(--dark);
+    background: var(--gradient-red);
+    color: var(--light);
     transform: scale(1.05);
+    border-color: var(--primary);
 }
 
 .servico-card.featured:hover {
-    transform: scale(1.08) translateY(-10px);
+    transform: scale(1.08) translateY(-15px);
+    box-shadow: 
+        0 30px 60px rgba(255, 71, 87, 0.4),
+        0 0 0 1px var(--primary),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .badge {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: var(--secondary);
-    color: var(--light);
+    background: var(--accent);
+    color: var(--darker);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .servico-icon {
@@ -606,7 +653,7 @@ section {
 }
 
 .servico-card.featured h3 {
-    color: var(--darker);
+    color: var(--light);
     font-weight: 800;
 }
 
@@ -618,8 +665,9 @@ section {
 }
 
 .servico-card.featured p {
-    color: var(--darker);
-    font-weight: 600;
+    color: var(--light);
+    font-weight: 500;
+    opacity: 0.95;
 }
 
 .servico-preco {
@@ -633,8 +681,9 @@ section {
 }
 
 .servico-card.featured .servico-preco {
-    color: var(--darker);
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+    color: var(--light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
 }
 
 /* Fidelidade */

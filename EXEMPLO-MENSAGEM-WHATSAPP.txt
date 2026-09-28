@@ -1,0 +1,63 @@
+📱 EXEMPLO DE MENSAGEM QUE SERÁ ENVIADA NO WHATSAPP
+═══════════════════════════════════════════════════
+
+Quando o cliente preencher o formulário e clicar em "Confirmar Agendamento via WhatsApp",
+ele será redirecionado para o WhatsApp com uma mensagem automática assim:
+
+═══════════════════════════════════════════════════
+
+🔵 *AGENDAMENTO - BARBEARIA JORGE RODRIGUES* 💈
+
+👤 *Nome:* João da Silva
+
+✂️ *Serviço:* Corte + Barba
+
+📅 *Data:* Sexta-feira, 15/11/2024
+
+⏰ *Horário:* 15:00
+
+📝 *Observações:* Gostaria de fazer o degradê alto
+
+_Aguardo confirmação! 🙏_
+
+═══════════════════════════════════════════════════
+
+🎯 VANTAGENS DESTE SISTEMA:
+
+✅ Cliente preenche tudo de uma vez (reduz idas e vindas)
+✅ Mensagem formatada e profissional
+✅ Você recebe todas as informações organizadas
+✅ Basta confirmar ou sugerir outro horário
+✅ Não precisa de API paga do WhatsApp Business
+✅ Funciona 100% pelo WhatsApp normal
+
+═══════════════════════════════════════════════════
+
+💡 WORKFLOW DO AGENDAMENTO:
+
+1. Cliente acessa o site
+2. Escolhe serviço, data e horário
+3. Preenche nome e telefone
+4. Clica em "Confirmar"
+5. É redirecionado para WhatsApp com mensagem pronta
+6. Cliente envia a mensagem
+7. VOCÊ recebe no WhatsApp e confirma
+8. Pronto! Agendamento feito
+
+═══════════════════════════════════════════════════
+
+🔮 EVOLUÇÃO FUTURA (Opcional):
+
+Se o negócio crescer, você pode implementar:
+
+- Confirmação automática via WhatsApp Business API
+- Lembretes 1 dia antes do horário
+- Sistema de gestão de agenda (admin panel)
+- Bloqueio automático de horários já ocupados
+- Integração com Google Calendar
+- Histórico de clientes
+
+Mas para começar, este sistema simples é PERFEITO e
+profissional o suficiente para impressionar o cliente! 🚀
+
+═══════════════════════════════════════════════════

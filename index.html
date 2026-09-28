@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Barbearia Jorge Rodrigues - Desde 2022. Agende seu horário com os melhores profissionais.">
+    <title>Barbearia Jorge Rodrigues | Agende Seu Horário</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5515998183520?text=Olá!%20Gostaria%20de%20agendar%20um%20horário" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Fale conosco no WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.825.741 5.482 2.034 7.783L0 32l8.465-2.019A15.923 15.923 0 0 0 16 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.587 0-5.054-.741-7.142-2.034l-.512-.304-5.304 1.267 1.267-5.054-.362-.57A13.257 13.257 0 0 1 2.667 16C2.667 8.648 8.648 2.667 16 2.667S29.333 8.648 29.333 16 23.352 29.333 16 29.333z"/>
+            <path d="M22.933 18.667c-.4-.2-2.367-1.167-2.733-1.3-.367-.133-.634-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.687-.622-3.213-1.982-1.187-1.059-1.988-2.366-2.221-2.766-.234-.4-.025-.617.175-.816.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.324-.778-.654-.673-.9-.686-.233-.012-.5-.015-.767-.015s-.7.1-1.067.5c-.367.4-1.4 1.367-1.4 3.333s1.433 3.867 1.633 4.133c.2.267 2.823 4.312 6.842 6.046.955.412 1.701.658 2.283.842.959.304 1.833.261 2.523.158.77-.115 2.367-.968 2.7-1.902.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z"/>
+        </svg>
+    </a>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">BARBEAR14</div>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#fidelidade">Fidelidade</a></li>
+                <li><a href="#agendar">Agendar</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-title-small">BARBEARIA</span>
+                <span class="hero-title-main">JORGE RODRIGUES</span>
+                <span class="hero-title-sub">DESDE 2022</span>
+            </h1>
+            <div class="hero-mustache">
+                <svg viewBox="0 0 200 80" fill="currentColor">
+                    <path d="M10,40 Q30,10 50,20 Q70,30 100,30 Q130,30 150,20 Q170,10 190,40 Q180,50 160,45 Q140,40 120,45 Q105,48 100,50 Q95,48 80,45 Q60,40 40,45 Q20,50 10,40 Z"/>
+                </svg>
+            </div>
+            <p class="hero-subtitle">Tradição e Estilo em Cada Corte</p>
+            <div class="hero-buttons">
+                <a href="#agendar" class="btn btn-primary">Agendar Horário</a>
+                <button class="btn btn-secondary" onclick="abrirCheckIn()">📱 Check-in Rápido</button>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Role para descobrir</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Nós</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h3>Tradição e Excelência</h3>
+                    <p>Desde 2022, a <strong>Barbearia Jorge Rodrigues</strong> oferece muito mais que um simples corte de cabelo. Oferecemos uma experiência única que combina técnicas tradicionais com tendências modernas.</p>
+                    <p>Nosso compromisso é fazer você sair daqui não apenas com um novo visual, mas com autoestima renovada e confiança elevada.</p>
+                    <div class="sobre-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Anos de Experiência</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Clientes Satisfeitos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Dedicação</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sobre-image">
+                    <div class="image-frame">
+                        <svg viewBox="0 0 400 500" class="barber-illustration">
+                            <rect x="50" y="50" width="300" height="400" rx="20" fill="#1a1a2e" stroke="#d4af37" stroke-width="3"/>
+                            <circle cx="200" cy="150" r="50" fill="#d4af37"/>
+                            <rect x="150" y="220" width="100" height="150" rx="10" fill="#2c2c3e"/>
+                            <path d="M100,450 L140,350 L260,350 L300,450 Z" fill="#16213e"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Serviços premium para o homem moderno</p>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">✂️</div>
+                    <h3>Corte</h3>
+                    <p>Corte clássico com técnicas refinadas</p>
+                    <span class="servico-preco">R$ 30,00</span>
+                    <button class="btn btn-small" onclick="agendarServico('Corte')">Agendar</button>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🪒</div>
+                    <h3>Barba</h3>
+                    <p>Aparo, design e finalização profissional</p>
+                    <span class="servico-preco">R$ 30,00</span>
+                    <button class="btn btn-small" onclick="agendarServico('Barba')">Agendar</button>
+                </div>
+                <div class="servico-card featured">
+                    <div class="badge">Mais Popular</div>
+                    <div class="servico-icon">💈</div>
+                    <h3>Corte + Barba</h3>
+                    <p>Combo completo para visual impecável</p>
+                    <span class="servico-preco">R$ 55,00</span>
+                    <button class="btn btn-small" onclick="agendarServico('Corte + Barba')">Agendar</button>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">👞</div>
+                    <h3>Pezinho</h3>
+                    <p>Acabamento e alinhamento perfeito</p>
+                    <span class="servico-preco">R$ 20,00</span>
+                    <button class="btn btn-small" onclick="agendarServico('Pezinho')">Agendar</button>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">✨</div>
+                    <h3>Sobrancelha</h3>
+                    <p>Design e definição profissional</p>
+                    <span class="servico-preco">R$ 10,00</span>
+                    <button class="btn btn-small" onclick="agendarServico('Sobrancelha')">Agendar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programa de Fidelidade -->
+    <section id="fidelidade" class="fidelidade">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Programa de Fidelidade</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Ganhe pontos a cada visita e troque por serviços grátis!</p>
+            </div>
+            
+            <div class="fidelidade-content">
+                <div class="fidelidade-hero">
+                    <div class="cartao-fidelidade">
+                        <div class="cartao-header">
+                            <h3>CARTÃO FIDELIDADE</h3>
+                            <div class="cartao-logo">💈</div>
+                        </div>
+                        <div class="cartao-body">
+                            <div class="pontos-display">
+                                <span class="pontos-label">Seus Pontos</span>
+                                <span class="pontos-numero">10</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <p class="pontos-text">Você está a 0 pontos do seu próximo prêmio!</p>
+                        </div>
+                        <div class="cartao-footer">
+                            <p>BARBEAR14 • DESDE 2022</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fidelidade-info-box">
+                        <h3>🎁 Como Funciona?</h3>
+                        <div class="info-steps">
+                            <div class="info-step">
+                                <span class="step-number">1</span>
+                                <p>A cada <strong>R$ 10,00</strong> gastos você ganha <strong>1 ponto</strong></p>
+                            </div>
+                            <div class="info-step">
+                                <span class="step-number">2</span>
+                                <p>Acumule seus pontos a cada visita</p>
+                            </div>
+                            <div class="info-step">
+                                <span class="step-number">3</span>
+                                <p>Troque por serviços grátis!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="premios-grid">
+                    <h3 class="premios-title">🏆 Prêmios Disponíveis</h3>
+                    <div class="premios-lista">
+                        <div class="premio-card">
+                            <div class="premio-icon">✂️</div>
+                            <h4>Corte Grátis</h4>
+                            <p class="premio-pontos">10 pontos</p>
+                            <p class="premio-valor">Valor: R$ 30,00</p>
+                        </div>
+                        <div class="premio-card">
+                            <div class="premio-icon">🪒</div>
+                            <h4>Barba Grátis</h4>
+                            <p class="premio-pontos">10 pontos</p>
+                            <p class="premio-valor">Valor: R$ 30,00</p>
+                        </div>
+                        <div class="premio-card destaque">
+                            <div class="premio-badge">Melhor Oferta</div>
+                            <div class="premio-icon">💈</div>
+                            <h4>Corte + Barba</h4>
+                            <p class="premio-pontos">18 pontos</p>
+                            <p class="premio-valor">Valor: R$ 55,00</p>
+                            <span class="economia">Economize 2 pontos!</span>
+                        </div>
+                        <div class="premio-card">
+                            <div class="premio-icon">👞</div>
+                            <h4>Pezinho Grátis</h4>
+                            <p class="premio-pontos">7 pontos</p>
+                            <p class="premio-valor">Valor: R$ 20,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fidelidade-cta">
+                    <div class="cta-content">
+                        <h3>💳 Ative Seu Cartão Fidelidade Agora!</h3>
+                        <p>Cadastro 100% gratuito e digital. Comece a acumular pontos hoje mesmo!</p>
+                        <button class="btn btn-primary btn-large" onclick="ativarFidelidade()">
+                            <span>Ativar Meu Cartão Grátis</span>
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M13.5 2C18.194 2 22 5.806 22 10.5c0 .858-.16 1.68-.453 2.437l1.905 5.595-5.888-1.77A8.478 8.478 0 0 1 13.5 19C8.806 19 5 15.194 5 10.5S8.806 2 13.5 2z"/>
+                            </svg>
+                        </button>
+                        <p class="cta-note">📱 O cartão é enviado direto no seu WhatsApp</p>
+                    </div>
+                    
+                    <div class="beneficios-lista">
+                        <div class="beneficio-item">
+                            <span class="check-icon">✓</span>
+                            <span>Totalmente gratuito</span>
+                        </div>
+                        <div class="beneficio-item">
+                            <span class="check-icon">✓</span>
+                            <span>100% digital pelo WhatsApp</span>
+                        </div>
+                        <div class="beneficio-item">
+                            <span class="check-icon">✓</span>
+                            <span>Sem mensalidades</span>
+                        </div>
+                        <div class="beneficio-item">
+                            <span class="check-icon">✓</span>
+                            <span>Pontos nunca expiram</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-fidelidade">
+                    <h3>❓ Perguntas Frequentes</h3>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <h4>Como recebo meus pontos?</h4>
+                            <p>Após cada atendimento, informe seu número de cadastro. Seus pontos são creditados automaticamente.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Os pontos vencem?</h4>
+                            <p>Não! Seus pontos ficam salvos para sempre. Acumule no seu ritmo.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Posso transferir pontos?</h4>
+                            <p>Não, os pontos são pessoais e intransferíveis.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h4>Como resgato os prêmios?</h4>
+                            <p>Quando tiver pontos suficientes, é só avisar antes do atendimento que quer resgatar!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento -->
+    <section id="agendar" class="agendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Agende Seu Horário</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Reserve seu horário de forma rápida e fácil</p>
+            </div>
+            <div class="agendamento-container">
+                <form id="agendamentoForm" class="agendamento-form">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(11) 99999-9999">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="servico">Serviço Desejado</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="Corte">Corte - R$ 30,00</option>
+                            <option value="Barba">Barba - R$ 30,00</option>
+                            <option value="Corte + Barba">Corte + Barba - R$ 55,00</option>
+                            <option value="Pezinho">Pezinho - R$ 20,00</option>
+                            <option value="Sobrancelha">Sobrancelha - R$ 10,00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data">Data</label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="horario">Horário</label>
+                            <select id="horario" name="horario" required>
+                                <option value="">Selecione</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observacoes">Observações (opcional)</label>
+                        <textarea id="observacoes" name="observacoes" rows="3" placeholder="Alguma preferência ou observação?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span>Confirmar Agendamento via WhatsApp</span>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.5 2C18.194 2 22 5.806 22 10.5c0 .858-.16 1.68-.453 2.437l1.905 5.595-5.888-1.77A8.478 8.478 0 0 1 13.5 19C8.806 19 5 15.194 5 10.5S8.806 2 13.5 2zm0 1.5c-3.866 0-7 3.134-7 7s3.134 7 7 7c1.245 0 2.415-.325 3.428-.895l.29-.17 3.248.976-.976-2.868.184-.313A6.476 6.476 0 0 0 20.5 10.5c0-3.866-3.134-7-7-7z"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="horarios-info">
+                    <h3>Horários de Funcionamento</h3>
+                    <div class="horarios-list">
+                        <div class="horario-item">
+                            <span class="dia">Segunda a Sexta</span>
+                            <span class="hora">9:30-12:00 | 13:30-19:00</span>
+                        </div>
+                        <div class="horario-item">
+                            <span class="dia">Sábado</span>
+                            <span class="hora">9:30 - 17:00</span>
+                        </div>
+                        <div class="horario-item closed">
+                            <span class="dia">Domingo</span>
+                            <span class="hora">Fechado</span>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>⚠️ Atenção</h4>
+                        <p><strong>Atendemos por ordem de chegada!</strong> O agendamento garante que reservaremos um horário para você, evitando espera.</p>
+                    </div>
+                    
+                    <div class="info-box" style="margin-top: 1rem;">
+                        <h4>💡 Como Funciona</h4>
+                        <p>Ao confirmar, você será redirecionado para o WhatsApp com todas as informações. Aguarde nossa confirmação!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contato-grid">
+                <div class="contato-info">
+                    <div class="contato-item">
+                        <div class="contato-icon">📍</div>
+                        <div class="contato-text">
+                            <h4>Endereço</h4>
+                            <p>R. Manoel Elói Garcia Martinez, 158<br>Vila Nossa Senhora de Fátima<br>Itapeva - SP, 18409-130<br><small>(Próximo à Secretaria da Educação)</small></p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">📱</div>
+                        <div class="contato-text">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5515998183520">(15) 99818-3520</a></p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">⏰</div>
+                        <div class="contato-text">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Seg - Sex: 9:30-12:00 | 13:30-19:00<br>Sábado: 9:30-17:00<br>Domingo: Fechado</p>
+                        </div>
+                    </div>
+                    <div class="contato-item">
+                        <div class="contato-icon">⚠️</div>
+                        <div class="contato-text">
+                            <h4>Informação Importante</h4>
+                            <p><strong>Atendemos por ordem de chegada!</strong><br>Agende pelo WhatsApp para garantir seu horário.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contato-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2!2d-48.8766!3d-23.9805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5d0e0e0e0e0e0%3A0x0!2zUi4gTWFub2VsIEVsw7NpIEdhcmNpYSBNYXJ0aW5leiwgMTU4IC0gVmlsYSBOb3NzYSBTZW5ob3JhIGRlIEbDoXRpbWEsIEl0YXBldmEgLSBTUA!5e0!3m2!1spt-BR!2sbr!4v1234567890" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BARBEAR14</h3>
+                    <p>Tradição e Estilo desde 2022</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/5515998183520" aria-label="WhatsApp">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Barbearia Jorge Rodrigues. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal QR Code Check-in -->
+    <div id="qrcodeModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>✂️ Check-in Rápido</h2>
+            <p>Escaneie o QR Code abaixo para fazer check-in</p>
+            <div id="qrcodeCanvas" class="qrcode-display"></div>
+            <div class="checkin-info">
+                <p><strong>Nome:</strong> <span id="clientName">-</span></p>
+                <p><strong>Última visita:</strong> <span id="lastVisit">-</span></p>
+                <p><strong>Total de visitas:</strong> <span id="totalVisits">0</span></p>
+                <p><strong>Pontos:</strong> <span id="clientPoints">0</span></p>
+            </div>
+            <button class="btn btn-primary" onclick="registrarVisita()">✅ Registrar Visita Agora</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

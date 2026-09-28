@@ -47,10 +47,11 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 20, 25, 0.95);
+    background: rgba(30, 58, 95, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav {
@@ -972,6 +973,20 @@ section {
     color: var(--gray);
     line-height: 1.6;
     font-size: 1.05rem;
+}
+
+.info-destaque {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(212, 184, 150, 0.1);
+    border-left: 4px solid var(--champagne);
+    border-radius: 8px;
+}
+
+.info-destaque p {
+    color: var(--navy);
+    font-size: 1rem;
+    margin: 0;
 }
 
 .premios-grid {

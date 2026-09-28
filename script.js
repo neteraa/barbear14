@@ -558,12 +558,29 @@ function registrarVisita() {
     clientes[currentClientData.id] = cliente;
     localStorage.setItem('barbear14_clientes', JSON.stringify(clientes));
     
+    // Verificar prêmios disponíveis
+    let premiosDisponiveis = [];
+    if (cliente.pontos >= 7) premiosDisponiveis.push('Pezinho (7 pts)');
+    if (cliente.pontos >= 10) {
+        premiosDisponiveis.push('Corte (10 pts)');
+        premiosDisponiveis.push('Barba (10 pts)');
+    }
+    if (cliente.pontos >= 18) premiosDisponiveis.push('Corte+Barba (18 pts)');
+    
     // Feedback
-    alert(`✅ Visita registrada com sucesso!\n\n` +
-          `Cliente: ${cliente.nome}\n` +
-          `Total de visitas: ${cliente.totalVisitas}\n` +
-          `Pontos acumulados: ${cliente.pontos}\n\n` +
-          `${cliente.pontos >= 10 ? '🎁 Cliente tem pontos para resgatar prêmio!' : ''}`);
+    let mensagem = `✅ Visita registrada com sucesso!\n\n` +
+                   `Cliente: ${cliente.nome}\n` +
+                   `Total de visitas: ${cliente.totalVisitas}\n` +
+                   `Pontos acumulados: ${cliente.pontos}\n`;
+    
+    if (premiosDisponiveis.length > 0) {
+        mensagem += `\n🎁 PRÊMIOS DISPONÍVEIS:\n${premiosDisponiveis.join('\n')}`;
+    } else {
+        const faltam = 7 - cliente.pontos;
+        mensagem += `\n💡 Faltam ${faltam} pontos pro primeiro prêmio!`;
+    }
+    
+    alert(mensagem);
     
     // Fechar modal
     fecharModal();

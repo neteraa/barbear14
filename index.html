@@ -189,12 +189,12 @@
                         <div class="cartao-body">
                             <div class="pontos-display">
                                 <span class="pontos-label">Seus Pontos</span>
-                                <span class="pontos-numero">10</span>
+                                <span class="pontos-numero">15</span>
                             </div>
                             <div class="progress-bar">
-                                <div class="progress-fill" style="width: 100%"></div>
+                                <div class="progress-fill" style="width: 83%"></div>
                             </div>
-                            <p class="pontos-text">Você está a 0 pontos do seu próximo prêmio!</p>
+                            <p class="pontos-text">Você pode resgatar: Pezinho, Corte ou Barba!</p>
                         </div>
                         <div class="cartao-footer">
                             <p>BARBEAR14 • DESDE 2022</p>
@@ -210,12 +210,15 @@
                             </div>
                             <div class="info-step">
                                 <span class="step-number">2</span>
-                                <p>Acumule 10 pontos = 10 visitas</p>
+                                <p>Acumule pontos e escolha seu prêmio</p>
                             </div>
                             <div class="info-step">
                                 <span class="step-number">3</span>
-                                <p>Troque por um serviço <strong>GRÁTIS!</strong></p>
+                                <p>Quanto mais pontos, melhor o prêmio!</p>
                             </div>
+                        </div>
+                        <div class="info-destaque">
+                            <p>💡 <strong>Dica:</strong> Junte 18 pontos e troque por Corte+Barba (economia de 2 pontos!)</p>
                         </div>
                     </div>
                 </div>
@@ -223,6 +226,12 @@
                 <div class="premios-grid">
                     <h3 class="premios-title">🏆 Prêmios Disponíveis</h3>
                     <div class="premios-lista">
+                        <div class="premio-card">
+                            <div class="premio-icon">👞</div>
+                            <h4>Pezinho Grátis</h4>
+                            <p class="premio-pontos">7 pontos</p>
+                            <p class="premio-valor">Valor: R$ 20,00</p>
+                        </div>
                         <div class="premio-card">
                             <div class="premio-icon">✂️</div>
                             <h4>Corte Grátis</h4>
@@ -236,18 +245,12 @@
                             <p class="premio-valor">Valor: R$ 30,00</p>
                         </div>
                         <div class="premio-card destaque">
-                            <div class="premio-badge">Mais Popular</div>
+                            <div class="premio-badge">Melhor Oferta</div>
                             <div class="premio-icon">💈</div>
                             <h4>Corte + Barba</h4>
-                            <p class="premio-pontos">10 pontos</p>
+                            <p class="premio-pontos">18 pontos</p>
                             <p class="premio-valor">Valor: R$ 55,00</p>
-                            <span class="economia">Mesmo preço!</span>
-                        </div>
-                        <div class="premio-card">
-                            <div class="premio-icon">👞</div>
-                            <h4>Pezinho Grátis</h4>
-                            <p class="premio-pontos">10 pontos</p>
-                            <p class="premio-valor">Valor: R$ 20,00</p>
+                            <span class="economia">Economize 2 pontos!</span>
                         </div>
                     </div>
                 </div>
@@ -496,7 +499,7 @@
                 <p><strong>Aniversário:</strong> <span id="clientBirthday">-</span></p>
                 <p><strong>Última visita:</strong> <span id="lastVisit">-</span></p>
                 <p><strong>Total de visitas:</strong> <span id="totalVisits">0</span></p>
-                <p><strong>Pontos:</strong> <span id="clientPoints">0</span> / 10</p>
+                <p><strong>Pontos acumulados:</strong> <span id="clientPoints">0</span></p>
             </div>
             <button class="btn btn-primary" onclick="registrarVisita()">✅ Registrar Visita Agora</button>
         </div>
